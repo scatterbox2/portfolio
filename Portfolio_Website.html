@@ -1,0 +1,1024 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- TAB ICON (FAVICON) -->
+    <link rel="icon" type="image/png" href="scbx.png" />
+
+    <!-- Font Awesome CDN for Platform Icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+    <title>ERNIE BALSOMO | Portfolio</title>
+    <!-- Google Fonts: Inter -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      /* --- CSS VARIABLES & RESET --- */
+      :root {
+        --bg-dark: #0d0f12;
+        --card-bg: #16191e;
+        --card-border: #23272f;
+        --text-main: #f3f4f6;
+        --text-muted: #9ca3af;
+        --accent-green: #10b981;
+        --accent-green-hover: #059669;
+        --accent-glow: rgba(16, 185, 129, 0.15);
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      /* Standard natural smooth scrolling */
+      html {
+        scroll-behavior: smooth;
+        font-family: "Inter", sans-serif;
+        background-color: var(--bg-dark);
+        color: var(--text-main);
+        line-height: 1.6;
+      }
+
+      /* --- NAVIGATION --- */
+      header {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        background-color: rgba(13, 15, 18, 0.88);
+        backdrop-filter: blur(12px);
+        border-bottom: 1px solid var(--card-border);
+        z-index: 1000;
+      }
+
+      nav {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 1.2rem 2rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .logo {
+        font-size: 1.3rem;
+        font-weight: 700;
+        color: var(--text-main);
+        text-decoration: none;
+      }
+
+      .logo span {
+        color: var(--accent-green);
+      }
+
+      .nav-links {
+        display: flex;
+        gap: 1.8rem;
+        list-style: none;
+      }
+
+      .nav-links a {
+        color: var(--text-muted);
+        text-decoration: none;
+        font-size: 0.95rem;
+        font-weight: 500;
+        transition: color 0.3s ease;
+      }
+
+      .nav-links a:hover {
+        color: var(--accent-green);
+      }
+
+      /* --- SECTIONS --- */
+      section {
+        padding: 6rem 2rem 4rem 2rem;
+        max-width: 1100px;
+        margin: 0 auto;
+      }
+
+      .section-title {
+        font-size: 2rem;
+        font-weight: 700;
+        margin-bottom: 2.5rem;
+        position: relative;
+        display: inline-block;
+      }
+
+      .section-title::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -8px;
+        width: 40px;
+        height: 3px;
+        background-color: var(--accent-green);
+        border-radius: 2px;
+      }
+
+      .btn {
+        display: inline-block;
+        padding: 0.8rem 1.8rem;
+        background-color: var(--accent-green);
+        color: #000000;
+        font-weight: 600;
+        text-decoration: none;
+        border-radius: 6px;
+        transition: all 0.3s ease;
+        border: 1px solid var(--accent-green);
+        cursor: pointer;
+      }
+
+      .btn:hover {
+        background-color: var(--accent-green-hover);
+        border-color: var(--accent-green-hover);
+        transform: translateY(-2px);
+        box-shadow: 0 4px 15px var(--accent-glow);
+      }
+
+      .btn-outline {
+        background-color: transparent;
+        color: var(--text-main);
+        border: 1px solid var(--card-border);
+        margin-left: 1rem;
+      }
+
+      .btn-outline:hover {
+        border-color: var(--accent-green);
+        color: var(--accent-green);
+        background-color: transparent;
+        box-shadow: none;
+      }
+
+      /* --- HERO --- */
+      #hero {
+        padding-top: 10rem;
+        min-height: 85vh;
+        display: flex;
+        align-items: center;
+      }
+
+      .hero-content {
+        max-width: 700px;
+      }
+
+      .hero-tag {
+        color: var(--accent-green);
+        font-weight: 600;
+        font-size: 0.95rem;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        margin-bottom: 1rem;
+      }
+
+      .hero-content h1 {
+        font-size: 3.5rem;
+        font-weight: 700;
+        line-height: 1.15;
+        margin-bottom: 1.2rem;
+      }
+
+      .hero-content p {
+        color: var(--text-muted);
+        font-size: 1.15rem;
+        margin-bottom: 2rem;
+      }
+
+      /* --- ABOUT & PROFILE --- */
+      .about-grid {
+        display: grid;
+        grid-template-columns: 280px 1fr;
+        gap: 3.5rem;
+        align-items: center;
+      }
+
+      .profile-container {
+        position: relative;
+        width: 100%;
+        max-width: 280px;
+        margin: 0 auto;
+      }
+
+      .profile-img {
+        width: 100%;
+        height: 320px;
+        object-fit: cover;
+        border-radius: 12px;
+        border: 2px solid var(--card-border);
+        background-color: var(--card-bg);
+        display: block;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+      }
+
+      .about-text p {
+        color: var(--text-muted);
+        margin-bottom: 1.2rem;
+      }
+
+      /* --- SERVICES & CARDS --- */
+      .cards-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 1.8rem;
+      }
+
+      .card {
+        background-color: var(--card-bg);
+        border: 1px solid var(--card-border);
+        padding: 2rem;
+        border-radius: 8px;
+        transition:
+          transform 0.3s ease,
+          border-color 0.3s ease;
+      }
+
+      .card:hover {
+        transform: translateY(-4px);
+        border-color: var(--accent-green);
+      }
+
+      .card-icon {
+        font-size: 1.8rem;
+        color: var(--accent-green);
+        margin-bottom: 1rem;
+      }
+
+      .card h3 {
+        font-size: 1.25rem;
+        margin-bottom: 0.8rem;
+      }
+
+      .card p {
+        color: var(--text-muted);
+        font-size: 0.95rem;
+      }
+
+      /* --- SKILLS --- */
+      .skills-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        gap: 1.5rem;
+      }
+
+      .skill-category {
+        background-color: var(--card-bg);
+        border: 1px solid var(--card-border);
+        padding: 1.5rem;
+        border-radius: 8px;
+      }
+
+      .skill-category h3 {
+        font-size: 1.1rem;
+        color: var(--accent-green);
+        margin-bottom: 1rem;
+      }
+
+      .skill-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.6rem;
+      }
+
+      .skill-badge {
+        background-color: var(--bg-dark);
+        border: 1px solid var(--card-border);
+        color: var(--text-main);
+        padding: 0.4rem 0.8rem;
+        border-radius: 16px;
+        font-size: 0.85rem;
+      }
+
+      /* --- FEATURED WORK & INTERACTIVE MODAL --- */
+      .project-card {
+        background-color: var(--card-bg);
+        border: 1px solid var(--card-border);
+        border-radius: 8px;
+        overflow: hidden;
+        transition:
+          border-color 0.3s ease,
+          transform 0.3s ease;
+        cursor: pointer;
+      }
+
+      .project-card:hover {
+        border-color: var(--accent-green);
+        transform: translateY(-4px);
+      }
+
+      .project-thumbnail {
+        width: 100%;
+        height: 180px;
+        object-fit: cover;
+        border-bottom: 1px solid var(--card-border);
+        background-color: #23272f;
+      }
+
+      .project-info {
+        padding: 1.5rem;
+      }
+
+      .project-tag {
+        font-size: 0.8rem;
+        color: var(--accent-green);
+        font-weight: 600;
+        text-transform: uppercase;
+        margin-bottom: 0.4rem;
+      }
+
+      .project-info h3 {
+        font-size: 1.2rem;
+        margin-bottom: 0.5rem;
+      }
+
+      .project-info p {
+        color: var(--text-muted);
+        font-size: 0.9rem;
+        margin-bottom: 1rem;
+      }
+
+      .view-work-link {
+        font-size: 0.88rem;
+        color: var(--accent-green);
+        font-weight: 600;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.3rem;
+      }
+
+      /* MODAL & CAROUSEL STYLES */
+      .modal-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.88);
+        backdrop-filter: blur(8px);
+        z-index: 2000;
+        display: none;
+        justify-content: center;
+        align-items: center;
+        padding: 1.5rem;
+      }
+
+      .modal-overlay.active {
+        display: flex;
+      }
+
+      .modal-content {
+        background-color: var(--card-bg);
+        border: 1px solid var(--card-border);
+        border-radius: 12px;
+        max-width: 850px;
+        width: 100%;
+        position: relative;
+        padding: 2.5rem;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8);
+      }
+
+      .modal-close {
+        position: absolute;
+        top: 1.2rem;
+        right: 1.5rem;
+        font-size: 1.8rem;
+        color: var(--text-muted);
+        background: none;
+        border: none;
+        cursor: pointer;
+        z-index: 10;
+      }
+
+      .modal-close:hover {
+        color: var(--accent-green);
+      }
+
+      /* CAROUSEL CONTAINER */
+      .carousel-container {
+        position: relative;
+        margin-top: 1.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .carousel-slide-wrapper {
+        width: 100%;
+        overflow: hidden;
+        border-radius: 8px;
+        border: 1px solid var(--card-border);
+        background-color: var(--bg-dark);
+        cursor: grab; /* Visual hint for mouse drag */
+        user-select: none; /* Prevents default image highlighting during drag */
+      }
+
+      .carousel-slide-wrapper:active {
+        cursor: grabbing;
+      }
+
+      .carousel-img {
+        width: 100%;
+        max-height: 420px;
+        object-fit: contain;
+        display: block;
+        pointer-events: none; /* Allows smooth mouse dragging over the image */
+        transition: transform 0.2s ease-out;
+      }
+
+      /* CAROUSEL NAV BUTTONS (< and >) */
+      .carousel-btn {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background: rgba(22, 25, 30, 0.85);
+        color: var(--text-main);
+        border: 1px solid var(--accent-green);
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        font-size: 1.2rem;
+        font-weight: bold;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.3s ease;
+        z-index: 5;
+      }
+
+      .carousel-btn:hover {
+        background: var(--accent-green);
+        color: #000;
+        box-shadow: 0 0 15px var(--accent-glow);
+      }
+
+      .carousel-btn.prev {
+        left: -15px;
+      }
+
+      .carousel-btn.next {
+        right: -15px;
+      }
+
+      /* SLIDE INDICATOR DOTS */
+      .carousel-dots {
+        display: flex;
+        justify-content: center;
+        gap: 8px;
+        margin-top: 1rem;
+      }
+
+      .dot {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background-color: var(--card-border);
+        transition: background-color 0.3s ease;
+      }
+
+      .dot.active {
+        background-color: var(--accent-green);
+      }
+
+      /* --- CERTIFICATIONS --- */
+      .cert-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 1.5rem;
+      }
+
+      .cert-card {
+        background-color: var(--card-bg);
+        border: 1px solid var(--card-border);
+        padding: 1.5rem;
+        border-radius: 8px;
+        display: flex;
+        align-items: flex-start;
+        gap: 1.2rem;
+      }
+
+      .cert-icon {
+        font-size: 2rem;
+        color: var(--accent-green);
+      }
+
+      .cert-info h3 {
+        font-size: 1.1rem;
+        margin-bottom: 0.2rem;
+      }
+
+      .cert-issuer {
+        color: var(--accent-green);
+        font-size: 0.85rem;
+        font-weight: 600;
+        margin-bottom: 0.4rem;
+      }
+
+      .cert-date {
+        color: var(--text-muted);
+        font-size: 0.8rem;
+      }
+
+      /* --- CONTACT --- */
+      .contact-container {
+        background-color: var(--card-bg);
+        border: 1px solid var(--card-border);
+        padding: 3rem;
+        border-radius: 8px;
+        text-align: center;
+        max-width: 700px;
+        margin: 0 auto;
+      }
+
+      .contact-container p {
+        color: var(--text-muted);
+        margin-bottom: 2rem;
+      }
+
+      /* --- FOOTER --- */
+      footer {
+        border-top: 1px solid var(--card-border);
+        padding: 2rem;
+        text-align: center;
+        color: var(--text-muted);
+        font-size: 0.85rem;
+      }
+
+      /* --- RESPONSIVE DESIGN --- */
+      @media (max-width: 768px) {
+        .hero-content h1 {
+          font-size: 2.5rem;
+        }
+        .about-grid {
+          grid-template-columns: 1fr;
+        }
+        .nav-links {
+          display: none;
+        }
+        .btn-outline {
+          margin-left: 0;
+          margin-top: 1rem;
+          display: block;
+          text-align: center;
+        }
+      }
+      /* --- FOOTER SOCIAL ICONS --- */
+.footer-social-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.2rem;
+  margin-top: 3rem;
+  margin-bottom: 1rem;
+}
+
+.social-icon-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  background-color: var(--card-bg);
+  border: 1px solid var(--card-border);
+  color: var(--text-muted);
+  border-radius: 50%;
+  font-size: 1.2rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.social-icon-btn:hover {
+  background-color: var(--accent-green);
+  border-color: var(--accent-green);
+  color: #000000;
+  transform: translateY(-3px);
+  box-shadow: 0 4px 15px var(--accent-glow);
+}
+    </style>
+  </head>
+  <body>
+    <!-- NAVIGATION -->
+    <header>
+      <nav>
+        <a href="#hero" class="logo">PORTFOLIO<span>.</span></a>
+        <ul class="nav-links">
+          <li><a href="#about">About</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#projects">Work</a></li>
+          <li><a href="#certifications">Certifications</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- 1. HERO SECTION -->
+    <!-- 1. HERO SECTION -->
+    <section id="hero">
+      <div class="hero-content">
+        <div class="hero-tag">// E-COMMERCE & PRODUCT LISTING SPECIALIST</div>
+        <h1>Scale Store Growth & Streamline Multi-Platform Listings.</h1>
+        <p>
+          I help e-commerce brands maximize visibility and sales through strategic SEO title building, product research, and multi-channel cross-listing across eBay, Shopify, Poshmark, Depop, and Grailed.
+        </p>
+        <a href="#contact" class="btn">Get in Touch</a>
+        <a href="#projects" class="btn btn-outline">View Featured Work</a>
+      </div>
+    </section>
+
+    <!-- 2. ABOUT SECTION -->
+    <section id="about">
+      <h2 class="section-title">About Me</h2>
+      <div class="about-grid">
+        <div class="profile-container">
+          <img src="ERNIE BALSOMO.jpg" alt="Profile Picture" class="profile-img" />
+        </div>
+        <div class="about-text">
+          <p>
+            Hello! I am an E-commerce Specialist and Virtual Assistant skilled in multi-platform store management, product research, and strategic catalog optimization.
+          </p>
+          <p>
+            I specialize in optimizing product listings using SEO keyword strategies, crafting persuasive product descriptions, and driving marketplace reach across major platforms like eBay, Shopify, Poshmark, Depop, and Grailed. Whether it's title building, cross-listing, or managing customer support, my focus is delivering high-precision results that boost visibility and sales.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. SERVICES SECTION -->
+    <section id="services">
+      <h2 class="section-title">Services</h2>
+      <div class="cards-grid">
+        <div class="card">
+          <div class="card-icon">🛍️</div>
+          <h3>E-commerce Store Management</h3>
+          <p>
+            End-to-end management of online storefronts, handling daily inventory tasks, customer support, and seamless cross-posting operations.
+          </p>
+        </div>
+        <div class="card">
+          <div class="card-icon">🔍</div>
+          <h3>Product Research & SEO</h3>
+          <p>
+            In-depth product research combined with targeted keyword SEO and optimized title building to maximize item search visibility.
+          </p>
+        </div>
+        <div class="card">
+          <div class="card-icon">📦</div>
+          <h3>Multi-Platform Product Listing</h3>
+          <p>
+            Specialized listing creation across eBay, Shopify, Poshmark, Depop, and Grailed, utilizing toolsets like List Perfectly and Prime Lister.
+          </p>
+        </div>
+        <div class="card">
+          <div class="card-icon">✍️</div>
+          <h3>Copywriting & Content Optimization</h3>
+          <p>
+            Writing compelling, accurate product descriptions and performing meticulous proofreading to drive buyer confidence and conversions.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. SKILLS SECTION -->
+    <section id="skills">
+      <h2 class="section-title">Skills & Tools</h2>
+      <div class="skills-grid">
+        <div class="skill-category">
+          <h3>E-commerce & Management</h3>
+          <div class="skill-list">
+            <span class="skill-badge">Ecommerce Manager</span>
+            <span class="skill-badge">Product Researcher</span>
+            <span class="skill-badge">Title Building</span>
+            <span class="skill-badge">Customer Support</span>
+          </div>
+        </div>
+        <div class="skill-category">
+          <h3>Product Listing & SEO</h3>
+          <div class="skill-list">
+            <span class="skill-badge">SEO Using Keywords</span>
+            <span class="skill-badge">Product Listing Specialist</span>
+            <span class="skill-badge">eBay Product Listing Specialist</span>
+            <span class="skill-badge">Poshmark Product Listing Specialist</span>
+            <span class="skill-badge">Depop Product Listing Specialist</span>
+            <span class="skill-badge">Grailed Product Listing Specialist</span>
+            <span class="skill-badge">Shopify Product Lister</span>
+          </div>
+        </div>
+        <div class="skill-category">
+          <h3>Content & Management Tools</h3>
+          <div class="skill-list">
+            <span class="skill-badge">Description Writer</span>
+            <span class="skill-badge">Cross Listing / Posting</span>
+            <span class="skill-badge">Proofreading</span>
+            <span class="skill-badge">Prime Lister</span>
+            <span class="skill-badge">List Perfectly</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. FEATURED WORK SECTION -->
+    <section id="projects">
+      <h2 class="section-title">Featured Work</h2>
+      <div class="cards-grid">
+        <!-- Project Card 1 -->
+        <div class="project-card" onclick="openModal('project1')">
+          <img
+            src="project1-thumb.jpg"
+            alt="Multi-Platform Listing"
+            class="project-thumbnail"
+          />
+          <div class="project-info">
+            <div class="project-tag">E-commerce & Listings</div>
+            <h3>Cross-Platform Listing & Optimization</h3>
+            <p>
+              Managed and cross-posted product inventory across eBay, Shopify, and Poshmark using List Perfectly.
+            </p>
+            <span class="view-work-link">Click to preview sample &rarr;</span>
+          </div>
+        </div>
+
+        <!-- Project Card 2 -->
+        <div class="project-card" onclick="openModal('project2')">
+          <img
+            src="project2-thumb.jpg"
+            alt="SEO Product Research"
+            class="project-thumbnail"
+          />
+          <div class="project-info">
+            <div class="project-tag">SEO & Copywriting</div>
+            <h3>SEO Title & Description Building</h3>
+            <p>
+              Crafted keyword-rich titles and persuasive product descriptions to maximize marketplace reach and conversions.
+            </p>
+            <span class="view-work-link">Click to preview sample &rarr;</span>
+          </div>
+        </div>
+
+        <!-- Project Card 3 -->
+        <div class="project-card" onclick="openModal('project3')">
+          <img
+            src="project3-thumb.jpg"
+            alt="Store Management"
+            class="project-thumbnail"
+          />
+          <div class="project-info">
+            <div class="project-tag">Product Research & Catalog</div>
+            <h3>Product Research & Catalog Expansion</h3>
+            <p>
+              Identified winning products, conducted market competitor analysis, and published complete catalog items.
+            </p>
+            <span class="view-work-link">Click to preview sample &rarr;</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. CERTIFICATIONS SECTION -->
+    <section id="certifications">
+      <h2 class="section-title">Certifications</h2>
+      <div class="cert-grid">
+        <div class="cert-card">
+          <div class="cert-icon">📜</div>
+          <div class="cert-info">
+            <h3>HubSpot CRM Certification</h3>
+            <div class="cert-issuer">HubSpot Academy</div>
+            <div class="cert-date">Completed 2026</div>
+          </div>
+        </div>
+        <div class="cert-card">
+          <div class="cert-icon">📜</div>
+          <div class="cert-info">
+            <h3>Virtual Assistant Training Program</h3>
+            <div class="cert-issuer">Professional Training Program</div>
+            <div class="cert-date">Completed 2025</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. CONTACT SECTION -->
+    <section id="contact">
+      <div class="contact-container">
+        <h2 style="margin-bottom: 1rem">Let's Build Something Together</h2>
+        <p>
+          I am available for freelance projects, store setup, or full-time opportunities.
+          Reach out directly via email or connect with me across my active platforms.
+        </p>
+        <a href="mailto:erniebalsomojr@gmail.com" class="btn">Send an Email</a>
+      </div>
+
+      <!-- PLATFORM & SOCIAL ICONS (BELOW CONTACT CARD) -->
+      <div class="footer-social-container">
+        <a href="https://www.upwork.com" target="_blank" title="Upwork" rel="noopener noreferrer" class="social-icon-btn"><i class="fa-solid fa-briefcase"></i></a>
+        <a href="https://www.onlinejobs.ph" target="_blank" title="OnlineJobs.ph" rel="noopener noreferrer" class="social-icon-btn"><i class="fa-solid fa-globe"></i></a>
+        <a href="https://www.linkedin.com" target="_blank" title="LinkedIn" rel="noopener noreferrer" class="social-icon-btn"><i class="fa-brands fa-linkedin-in"></i></a>
+        <a href="https://www.facebook.com" target="_blank" title="Facebook" rel="noopener noreferrer" class="social-icon-btn"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="https://www.x.com" target="_blank" title="X (Twitter)" rel="noopener noreferrer" class="social-icon-btn"><i class="fa-brands fa-x-twitter"></i></a>
+        <a href="https://www.instagram.com" target="_blank" title="Instagram" rel="noopener noreferrer" class="social-icon-btn"><i class="fa-brands fa-instagram"></i></a>
+        <a href="https://www.tiktok.com" target="_blank" title="TikTok" rel="noopener noreferrer" class="social-icon-btn"><i class="fa-brands fa-tiktok"></i></a>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+      <p>
+        &copy; 2026 ERNIE BALSOMO. Built with precision and modern design standards.
+      </p>
+    </footer>
+
+    <!-- INTERACTIVE MODAL FOR WORK SAMPLES -->
+    <div
+      id="modalOverlay"
+      class="modal-overlay"
+      onclick="closeModalOnOuterClick(event)"
+    >
+      <div class="modal-content">
+        <button class="modal-close" onclick="closeModal()">&times;</button>
+        <div id="modalBody">
+          <!-- Content loaded dynamically via JS -->
+        </div>
+      </div>
+    </div>
+
+    <!-- JAVASCRIPT WITH EMBEDDED SAMPLES & CAROUSEL -->
+    <script>
+      /* DIRECTLY ADD & UPDATE YOUR SAMPLE WORK IMAGES HERE */
+      const projectData = {
+        project1: {
+          title: "Cross-Platform Listing & Inventory Synchronization",
+          category: "E-commerce & Listings",
+          description:
+            "Created accurate product listings and synchronized inventory seamlessly across eBay, Shopify, Poshmark, Depop, and Grailed using Prime Lister and List Perfectly.",
+          images: [
+            "project1-thumb.jpg",    // <--- Replace with your listing mockup/screenshot
+            "listing-sample-2.jpg"
+          ],
+        },
+        project2: {
+          title: "SEO Keyword Title & Description Optimization",
+          category: "SEO & Copywriting",
+          description:
+            "Researched high-volume search keywords to build optimized product titles, detailed descriptions, and clear item specs for maximum buyer conversion.",
+          images: [
+            "project2-thumb.jpg",    // <--- Replace with your title/description proof mockup
+            "seo-sample-2.jpg"
+          ],
+        },
+        project3: {
+          title: "Product Research & Catalog Management",
+          category: "Product Research & Catalog",
+          description:
+            "Evaluated market trends, source products, and managed full store uploads ensuring complete data entry accuracy and proofreading.",
+          images: [
+            "project3-thumb.jpg"     // <--- Replace with your product research spreadsheet or store dashboard screenshot
+          ],
+        },
+      };
+
+      let currentProjectImages = [];
+      let currentImageIndex = 0;
+
+      // Drag & Swipe tracking variables
+      let isDragging = false;
+      let startX = 0;
+      let currentTranslate = 0;
+
+      function openModal(projectId) {
+        const data = projectData[projectId];
+        if (!data) return;
+
+        currentProjectImages = data.images;
+        currentImageIndex = 0;
+
+        const modalBody = document.getElementById("modalBody");
+        modalBody.innerHTML = `
+            <div class="project-tag">${data.category}</div>
+            <h2 style="font-size: 1.8rem; margin: 0.3rem 0 0.8rem 0;">${data.title}</h2>
+            <p style="color: var(--text-muted);">${data.description}</p>
+            
+            <!-- CAROUSEL -->
+            <div class="carousel-container">
+                ${currentProjectImages.length > 1 ? '<button class="carousel-btn prev" onclick="prevSlide()">&lt;</button>' : ""}
+                
+                <div class="carousel-slide-wrapper" id="slideWrapper">
+                    <img id="carouselImage" src="${currentProjectImages[0]}" alt="${data.title}" class="carousel-img" onerror="this.src='https://via.placeholder.com/800x450/16191e/10b981?text=Work+Sample+Image'">
+                </div>
+                
+                ${currentProjectImages.length > 1 ? '<button class="carousel-btn next" onclick="nextSlide()">&gt;</button>' : ""}
+            </div>
+
+            <!-- DOT INDICATORS -->
+            <div class="carousel-dots" id="carouselDots"></div>
+        `;
+
+        renderDots();
+        initDragAndSwipe();
+        document.getElementById("modalOverlay").classList.add("active");
+      }
+
+      function updateCarousel() {
+        const imgElement = document.getElementById("carouselImage");
+        if (!imgElement) return;
+
+        imgElement.style.transform = "translateX(0px)";
+        imgElement.src = currentProjectImages[currentImageIndex];
+
+        const dots = document.querySelectorAll(".dot");
+        dots.forEach((dot, idx) => {
+          dot.classList.toggle("active", idx === currentImageIndex);
+        });
+      }
+
+      function prevSlide() {
+        currentImageIndex =
+          (currentImageIndex - 1 + currentProjectImages.length) %
+          currentProjectImages.length;
+        updateCarousel();
+      }
+
+      function nextSlide() {
+        currentImageIndex =
+          (currentImageIndex + 1) % currentProjectImages.length;
+        updateCarousel();
+      }
+
+      function renderDots() {
+        const dotsContainer = document.getElementById("carouselDots");
+        if (currentProjectImages.length <= 1) {
+          dotsContainer.innerHTML = "";
+          return;
+        }
+
+        let dotsHTML = "";
+        currentProjectImages.forEach((_, idx) => {
+          dotsHTML += `<div class="dot ${idx === 0 ? "active" : ""}"></div>`;
+        });
+        dotsContainer.innerHTML = dotsHTML;
+      }
+
+      /* DRAG & TOUCH SWIPE LOGIC */
+      function initDragAndSwipe() {
+        const wrapper = document.getElementById("slideWrapper");
+        const img = document.getElementById("carouselImage");
+        if (!wrapper || currentProjectImages.length <= 1) return;
+
+        // Touch events (Mobile)
+        wrapper.addEventListener("touchstart", touchStart);
+        wrapper.addEventListener("touchend", touchEnd);
+        wrapper.addEventListener("touchmove", touchMove);
+
+        // Mouse events (Desktop Drag)
+        wrapper.addEventListener("mousedown", touchStart);
+        wrapper.addEventListener("mouseup", touchEnd);
+        wrapper.addEventListener("mouseleave", touchEnd);
+        wrapper.addEventListener("mousemove", touchMove);
+
+        function touchStart(event) {
+          isDragging = true;
+          startX = getPositionX(event);
+        }
+
+        function touchMove(event) {
+          if (!isDragging) return;
+          const currentPosition = getPositionX(event);
+          currentTranslate = currentPosition - startX;
+          img.style.transform = `translateX(${currentTranslate}px)`;
+        }
+
+        function touchEnd() {
+          if (!isDragging) return;
+          isDragging = false;
+
+          // Threshold for triggering slide change (50px swipe)
+          if (currentTranslate < -50) {
+            nextSlide();
+          } else if (currentTranslate > 50) {
+            prevSlide();
+          } else {
+            img.style.transform = "translateX(0px)";
+          }
+          currentTranslate = 0;
+        }
+
+        function getPositionX(event) {
+          return event.type.includes("mouse")
+            ? event.pageX
+            : event.touches[0].clientX;
+        }
+      }
+
+      function closeModal() {
+        document.getElementById("modalOverlay").classList.remove("active");
+      }
+
+      function closeModalOnOuterClick(event) {
+        if (event.target.id === "modalOverlay") {
+          closeModal();
+        }
+      }
+    </script>
+  </body>
+</html>
