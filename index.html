@@ -8,7 +8,10 @@
     <link rel="icon" type="image/png" href="scbx.png" />
 
     <!-- Font Awesome CDN for Platform Icons -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
 
     <title>ERNIE BALSOMO | Portfolio</title>
     <!-- Google Fonts: Inter -->
@@ -62,6 +65,7 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
+        position: relative;
       }
 
       .logo {
@@ -90,6 +94,22 @@
       }
 
       .nav-links a:hover {
+        color: var(--accent-green);
+      }
+
+      /* Hamburger Toggle Button */
+      .hamburger-btn {
+        display: none;
+        background: none;
+        border: none;
+        color: var(--text-main);
+        font-size: 1.5rem;
+        cursor: pointer;
+        padding: 0.3rem;
+        transition: color 0.3s ease;
+      }
+
+      .hamburger-btn:hover {
         color: var(--accent-green);
       }
 
@@ -130,6 +150,7 @@
         transition: all 0.3s ease;
         border: 1px solid var(--accent-green);
         cursor: pointer;
+        text-align: center;
       }
 
       .btn:hover {
@@ -185,6 +206,13 @@
         color: var(--text-muted);
         font-size: 1.15rem;
         margin-bottom: 2rem;
+      }
+
+      .hero-btns {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 1rem;
       }
 
       /* --- ABOUT & PROFILE --- */
@@ -410,8 +438,8 @@
         border-radius: 8px;
         border: 1px solid var(--card-border);
         background-color: var(--bg-dark);
-        cursor: grab; /* Visual hint for mouse drag */
-        user-select: none; /* Prevents default image highlighting during drag */
+        cursor: grab;
+        user-select: none;
       }
 
       .carousel-slide-wrapper:active {
@@ -423,7 +451,7 @@
         max-height: 420px;
         object-fit: contain;
         display: block;
-        pointer-events: none; /* Allows smooth mouse dragging over the image */
+        pointer-events: none;
         transition: transform 0.2s ease-out;
       }
 
@@ -546,56 +574,89 @@
         font-size: 0.85rem;
       }
 
-      /* --- RESPONSIVE DESIGN --- */
+      /* --- FOOTER SOCIAL ICONS --- */
+      .footer-social-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 1.2rem;
+        margin-top: 3rem;
+        margin-bottom: 1rem;
+      }
+
+      .social-icon-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 44px;
+        height: 44px;
+        min-width: 44px;
+        min-height: 44px;
+        aspect-ratio: 1 / 1;
+        flex-shrink: 0;
+        background-color: var(--card-bg);
+        border: 1px solid var(--card-border);
+        color: var(--text-muted);
+        border-radius: 50%;
+        font-size: 1.2rem;
+        text-decoration: none;
+        transition: all 0.3s ease;
+      }
+
+      .social-icon-btn:hover {
+        background-color: var(--accent-green);
+        border-color: var(--accent-green);
+        color: #000000;
+        transform: translateY(-3px);
+        box-shadow: 0 4px 15px var(--accent-glow);
+      }
+
+      /* --- RESPONSIVE DESIGN & HAMBURGER MENU --- */
       @media (max-width: 768px) {
+        .hamburger-btn {
+          display: block;
+        }
+
+        .nav-links {
+          display: none;
+          position: absolute;
+          top: 100%;
+          left: 0;
+          width: 100%;
+          flex-direction: column;
+          background-color: rgba(22, 25, 30, 0.98);
+          border-bottom: 1px solid var(--card-border);
+          padding: 1.5rem 2rem;
+          gap: 1.2rem;
+          box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+        }
+
+        .nav-links.active {
+          display: flex;
+        }
+
         .hero-content h1 {
           font-size: 2.5rem;
         }
+
+        /* Full width equal-size stacked buttons on mobile */
+        .hero-btns {
+          flex-direction: column;
+          width: 100%;
+          gap: 0.8rem;
+        }
+
+        .hero-btns .btn {
+          width: 100%;
+          margin-left: 0;
+          display: block;
+        }
+
         .about-grid {
           grid-template-columns: 1fr;
         }
-        .nav-links {
-          display: none;
-        }
-        .btn-outline {
-          margin-left: 0;
-          margin-top: 1rem;
-          display: block;
-          text-align: center;
-        }
       }
-      /* --- FOOTER SOCIAL ICONS --- */
-.footer-social-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 1.2rem;
-  margin-top: 3rem;
-  margin-bottom: 1rem;
-}
-
-.social-icon-btn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 44px;
-  height: 44px;
-  background-color: var(--card-bg);
-  border: 1px solid var(--card-border);
-  color: var(--text-muted);
-  border-radius: 50%;
-  font-size: 1.2rem;
-  text-decoration: none;
-  transition: all 0.3s ease;
-}
-
-.social-icon-btn:hover {
-  background-color: var(--accent-green);
-  border-color: var(--accent-green);
-  color: #000000;
-  transform: translateY(-3px);
-  box-shadow: 0 4px 15px var(--accent-glow);
-}
     </style>
   </head>
   <body>
@@ -603,18 +664,26 @@
     <header>
       <nav>
         <a href="#hero" class="logo">PORTFOLIO<span>.</span></a>
-        <ul class="nav-links">
-          <li><a href="#about">About</a></li>
-          <li><a href="#services">Services</a></li>
-          <li><a href="#skills">Skills</a></li>
-          <li><a href="#projects">Work</a></li>
-          <li><a href="#certifications">Certifications</a></li>
-          <li><a href="#contact">Contact</a></li>
+        <button
+          class="hamburger-btn"
+          id="hamburgerBtn"
+          aria-label="Toggle Navigation"
+        >
+          <i class="fa-solid fa-bars"></i>
+        </button>
+        <ul class="nav-links" id="navLinks">
+          <li><a href="#about" onclick="closeNav()">About</a></li>
+          <li><a href="#services" onclick="closeNav()">Services</a></li>
+          <li><a href="#skills" onclick="closeNav()">Skills</a></li>
+          <li><a href="#projects" onclick="closeNav()">Work</a></li>
+          <li>
+            <a href="#certifications" onclick="closeNav()">Certifications</a>
+          </li>
+          <li><a href="#contact" onclick="closeNav()">Contact</a></li>
         </ul>
       </nav>
     </header>
 
-    <!-- 1. HERO SECTION -->
     <!-- 1. HERO SECTION -->
     <section id="hero">
       <div class="hero-content">
@@ -623,8 +692,10 @@
         <p>
           I help e-commerce brands maximize visibility and sales through strategic SEO title building, product research, and multi-channel cross-listing across eBay, Shopify, Poshmark, Depop, and Grailed.
         </p>
-        <a href="#contact" class="btn">Get in Touch</a>
-        <a href="#projects" class="btn btn-outline">View Featured Work</a>
+        <div class="hero-btns">
+          <a href="#contact" class="btn">Get in Touch</a>
+          <a href="#projects" class="btn btn-outline">View Featured Work</a>
+        </div>
       </div>
     </section>
 
@@ -845,6 +916,31 @@
 
     <!-- JAVASCRIPT WITH EMBEDDED SAMPLES & CAROUSEL -->
     <script>
+      /* MOBILE HAMBURGER TOGGLE LOGIC */
+      const hamburgerBtn = document.getElementById("hamburgerBtn");
+      const navLinks = document.getElementById("navLinks");
+
+      hamburgerBtn.addEventListener("click", () => {
+        navLinks.classList.toggle("active");
+        const icon = hamburgerBtn.querySelector("i");
+        if (navLinks.classList.contains("active")) {
+          icon.classList.remove("fa-bars");
+          icon.classList.add("fa-xmark");
+        } else {
+          icon.classList.remove("fa-xmark");
+          icon.classList.add("fa-bars");
+        }
+      });
+
+      function closeNav() {
+        if (navLinks.classList.contains("active")) {
+          navLinks.classList.remove("active");
+          const icon = hamburgerBtn.querySelector("i");
+          icon.classList.remove("fa-xmark");
+          icon.classList.add("fa-bars");
+        }
+      }
+
       /* DIRECTLY ADD & UPDATE YOUR SAMPLE WORK IMAGES HERE */
       const projectData = {
         project1: {
@@ -853,7 +949,7 @@
           description:
             "Created accurate product listings and synchronized inventory seamlessly across eBay, Shopify, Poshmark, Depop, and Grailed using Prime Lister and List Perfectly.",
           images: [
-            "project1-thumb.jpg",    // <--- Replace with your listing mockup/screenshot
+            "project1-thumb.jpg",
             "listing-sample-2.jpg"
           ],
         },
@@ -863,7 +959,7 @@
           description:
             "Researched high-volume search keywords to build optimized product titles, detailed descriptions, and clear item specs for maximum buyer conversion.",
           images: [
-            "project2-thumb.jpg",    // <--- Replace with your title/description proof mockup
+            "project2-thumb.jpg",
             "seo-sample-2.jpg"
           ],
         },
@@ -873,7 +969,7 @@
           description:
             "Evaluated market trends, source products, and managed full store uploads ensuring complete data entry accuracy and proofreading.",
           images: [
-            "project3-thumb.jpg"     // <--- Replace with your product research spreadsheet or store dashboard screenshot
+            "project3-thumb.jpg"
           ],
         },
       };
