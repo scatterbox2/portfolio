@@ -561,6 +561,52 @@
         font-size: 0.8rem;
       }
 
+      /* --- FULL SAMPLE BUTTON --- */
+      .full-sample-container {
+        text-align: center;
+        margin-top: 1.2rem;
+      }
+
+      .full-sample-btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+
+        padding: 0.8rem 1.8rem;
+
+        background-color: var(--accent-green);
+        color: #000000;
+
+        border: 1px solid var(--accent-green);
+        border-radius: 6px;
+
+        font-size: 0.9rem;
+        font-weight: 600;
+
+        text-decoration: none;
+        cursor: pointer;
+
+        transition: all 0.3s ease;
+      }
+
+      .full-sample-btn:hover {
+        background-color: var(--accent-green-hover);
+        border-color: var(--accent-green-hover);
+        transform: translateY(-2px);
+        box-shadow: 0 4px 15px var(--accent-glow);
+      }
+
+      .full-sample-btn i {
+        font-size: 0.8rem;
+      }
+
+      .full-sample-note {
+        margin-top: 0.5rem;
+        font-size: 0.7rem;
+        color: var(--text-muted);
+      }
+
       /* --- CONTACT --- */
       .contact-container {
         background-color: var(--card-bg);
@@ -729,11 +775,7 @@
 
       <div class="about-grid">
         <div class="profile-container">
-          <img
-            src="ERNIE BALSOMO.jpg"
-            alt="Profile Picture"
-            class="profile-img"
-          />
+          <img src="Ernie.png" alt="Profile Picture" class="profile-img" />
         </div>
 
         <div class="about-text">
@@ -902,69 +944,97 @@
       <h2 class="section-title">Portfolio Samples</h2>
 
       <div class="cards-grid">
-        <!-- Project Card 1 -->
+        <!-- Project 1 — Product Research & Data Enrichment -->
         <div class="project-card" onclick="openModal('project1')">
-          <img
-            src="project1-thumb.jpg"
-            alt="Cross-Platform Product Listing"
-            class="project-thumbnail"
-          />
-          <div class="project-info">
-            <div class="project-tag">Product Listing</div>
+          <!-- <img
+        src="project1-thumb.jpg"
+        alt="Product Research & Data Enrichment"
+        class="project-thumbnail"
+      /> -->
 
-            <h3>Cross-Platform Product Listing</h3>
+          <div class="project-info">
+            <div class="project-tag">Product Research</div>
+
+            <h3>Product Research & Data Enrichment</h3>
 
             <p>
-              Prepared and manually adapted product listings for multiple
-              marketplaces, ensuring titles, descriptions, categories, pricing,
-              and product details matched each platform's listing requirements.
+              Researched products from limited supplier information, verified
+              specifications and features, gathered supporting data, and
+              organized findings into structured research documentation for
+              listing preparation.
             </p>
 
             <span class="view-work-link">View portfolio sample →</span>
           </div>
         </div>
 
-        <!-- Project 2 -->
+        <!-- Project 2 — Product Monitoring & Opportunity Analysis -->
         <div class="project-card" onclick="openModal('project2')">
-          <img
-            src="project2-thumb.jpg"
-            alt="SEO Product Listing"
-            class="project-thumbnail"
-          />
-          <div class="project-info">
-            <div class="project-tag">SEO & Product Research</div>
+          <!-- <img
+        src="Monitoring.png"
+        alt="Product Monitoring & Opportunity Analysis"
+        class="project-thumbnail"
+      /> -->
 
-            <h3>Product Research & SEO Content Creation</h3>
+          <div class="project-info">
+            <div class="project-tag">Product Monitoring</div>
+
+            <h3>Product Monitoring & Opportunity Analysis</h3>
 
             <p>
-              Researched products with limited information to identify
-              specifications, features, and relevant keywords, then created
-              optimized product titles and descriptions for marketplace
-              listings.
+              Monitored supplier products against eBay competitors to evaluate
+              pricing, product specifications, projected profitability, and
+              potential resale opportunities.
             </p>
 
-            <span class="view-work-link"> View portfolio sample → </span>
+            <span class="view-work-link">View portfolio sample →</span>
           </div>
         </div>
 
-        <!-- Project 3 -->
+        <!-- Project 3 — SEO Product Listing Optimization -->
         <div class="project-card" onclick="openModal('project3')">
-          <img
-            src="project3-thumb.jpg"
-            alt="Competitor Analysis"
-            class="project-thumbnail"
-          />
-          <div class="project-info">
-            <div class="project-tag">Competitor Analysis</div>
+          <!-- <img
+        src="project3-thumb.jpg"
+        alt="SEO Product Listing Optimization"
+        class="project-thumbnail"
+      /> -->
 
-            <h3>Competitor & Listing Analysis</h3>
+          <div class="project-info">
+            <div class="project-tag">SEO & Product Listing</div>
+
+            <h3>SEO Product Listing Optimization</h3>
 
             <p>
-              Analyzed competitor listings, pricing, and customer feedback to
-              identify listing improvements and strengthen product positioning.
+              Transformed researched product information into optimized
+              marketplace titles, keywords, bullet points, and descriptions
+              designed to improve search visibility and product presentation.
             </p>
 
-            <span class="view-work-link"> View portfolio sample → </span>
+            <span class="view-work-link">View portfolio sample →</span>
+          </div>
+        </div>
+
+        <!-- Project 4 — Cross-Platform Product Listing -->
+        <div class="project-card" onclick="openModal('project4')">
+          <!-- <img
+        src="project4-thumb.jpg"
+        alt="Cross-Platform Product Listing"
+        class="project-thumbnail"
+      /> -->
+
+          <div class="project-info">
+            <div class="project-tag">Multi-Platform Listing</div>
+
+            <h3>Cross-Platform Product Listing</h3>
+
+            <p>
+              Prepared and manually adapted product listings across multiple
+              marketplaces, maintaining consistent product information while
+              adjusting titles, descriptions, categories, pricing, and details
+              to fit each platform.
+            </p>
+
+            <span class="view-work-link">View portfolio sample →</span>
           </div>
         </div>
       </div>
@@ -1095,13 +1165,18 @@
 
     <!-- JAVASCRIPT WITH EMBEDDED SAMPLES & CAROUSEL -->
     <script>
-      /* MOBILE HAMBURGER TOGGLE LOGIC */
+      /* =========================================================
+     MOBILE HAMBURGER TOGGLE
+     ========================================================= */
+
       const hamburgerBtn = document.getElementById("hamburgerBtn");
       const navLinks = document.getElementById("navLinks");
 
       hamburgerBtn.addEventListener("click", () => {
         navLinks.classList.toggle("active");
+
         const icon = hamburgerBtn.querySelector("i");
+
         if (navLinks.classList.contains("active")) {
           icon.classList.remove("fa-bars");
           icon.classList.add("fa-xmark");
@@ -1114,152 +1189,356 @@
       function closeNav() {
         if (navLinks.classList.contains("active")) {
           navLinks.classList.remove("active");
+
           const icon = hamburgerBtn.querySelector("i");
           icon.classList.remove("fa-xmark");
           icon.classList.add("fa-bars");
         }
       }
 
-      /* DIRECTLY ADD & UPDATE YOUR SAMPLE WORK IMAGES HERE */
+      /* =========================================================
+     PORTFOLIO PROJECT DATA
+     
+     IMPORTANT:
+     - Put your actual screenshot filenames in "images"
+     - Put a DIFFERENT Google Drive link in "driveLink"
+     - Do NOT use Markdown [ ]( ) inside the URL
+     ========================================================= */
+
       const projectData = {
+        /* PROJECT 1 */
         project1: {
-          title: "Cross-Platform Listing & Inventory Synchronization",
-          category: "E-commerce & Listings",
+          title: "Product Research & Data Enrichment",
+
+          category: "Product Research",
+
           description:
-            "Created accurate product listings and synchronized inventory seamlessly across eBay, Shopify, Poshmark, Depop, and Grailed using Prime Lister and List Perfectly.",
-          images: ["project1-thumb.jpg", "listing-sample-2.jpg"],
+            "Researched products from limited supplier information, verified specifications and features, gathered supporting product data, and organized findings into structured research documentation for listing preparation.",
+
+          images: ["research-sample-1.jpg", "research-sample-2.jpg"],
+
+          driveLink: "https://drive.google.com/YOUR-PROJECT-1-LINK",
         },
+
+        /* PROJECT 2 */
         project2: {
-          title: "SEO Keyword Title & Description Optimization",
-          category: "SEO & Copywriting",
+          title: "Product Monitoring & Opportunity Analysis",
+
+          category: "Product Monitoring",
+
           description:
-            "Researched high-volume search keywords to build optimized product titles, detailed descriptions, and clear item specs for maximum buyer conversion.",
-          images: ["project2-thumb.jpg", "seo-sample-2.jpg"],
+            "Monitored supplier products against eBay competitors to evaluate pricing, product specifications, projected profitability, and potential resale opportunities while considering the client's minimum profit requirements.",
+
+          images: ["Monitoring.png"],
+
+          driveLink: "https://drive.google.com/drive/u/1/folders/12HXoRZWQT38h9N_C7zz-8T-5H3SxfjRX",
         },
+
+        /* PROJECT 3 */
         project3: {
-          title: "Product Research & Catalog Management",
-          category: "Product Research & Catalog",
+          title: "SEO Product Listing Optimization",
+
+          category: "SEO & Product Listing",
+
           description:
-            "Evaluated market trends, source products, and managed full store uploads ensuring complete data entry accuracy and proofreading.",
-          images: ["project3-thumb.jpg"],
+            "Transformed researched product information into optimized marketplace titles, relevant keywords, bullet points, and product descriptions designed to improve search visibility and present product information clearly to potential buyers.",
+
+          images: ["seo-sample-1.jpg", "seo-sample-2.jpg"],
+
+          driveLink: "https://drive.google.com/YOUR-PROJECT-3-LINK",
+        },
+
+        /* PROJECT 4 */
+        project4: {
+          title: "Cross-Platform Product Listing",
+
+          category: "Multi-Platform Listing",
+
+          description:
+            "Prepared and manually adapted product listings across multiple marketplaces, maintaining consistent product information while adjusting titles, descriptions, categories, pricing, and product details to fit each platform.",
+
+          images: ["listing-sample-1.jpg", "listing-sample-2.jpg"],
+
+          driveLink: "https://drive.google.com/YOUR-PROJECT-4-LINK",
         },
       };
+
+      /* =========================================================
+     CAROUSEL VARIABLES
+     ========================================================= */
 
       let currentProjectImages = [];
       let currentImageIndex = 0;
 
-      // Drag & Swipe tracking variables
       let isDragging = false;
       let startX = 0;
       let currentTranslate = 0;
 
+      /* =========================================================
+     OPEN PROJECT MODAL
+     ========================================================= */
+
       function openModal(projectId) {
         const data = projectData[projectId];
+
         if (!data) return;
 
         currentProjectImages = data.images;
         currentImageIndex = 0;
 
         const modalBody = document.getElementById("modalBody");
-        modalBody.innerHTML = `
-            <div class="project-tag">${data.category}</div>
-            <h2 style="font-size: 1.8rem; margin: 0.3rem 0 0.8rem 0;">${data.title}</h2>
-            <p style="color: var(--text-muted);">${data.description}</p>
-            
-            <!-- CAROUSEL -->
-            <div class="carousel-container">
-                ${currentProjectImages.length > 1 ? '<button class="carousel-btn prev" onclick="prevSlide()">&lt;</button>' : ""}
-                
-                <div class="carousel-slide-wrapper" id="slideWrapper">
-                    <img id="carouselImage" src="${currentProjectImages[0]}" alt="${data.title}" class="carousel-img" onerror="this.src='https://via.placeholder.com/800x450/16191e/10b981?text=Work+Sample+Image'">
-                </div>
-                
-                ${currentProjectImages.length > 1 ? '<button class="carousel-btn next" onclick="nextSlide()">&gt;</button>' : ""}
-            </div>
 
-            <!-- DOT INDICATORS -->
-            <div class="carousel-dots" id="carouselDots"></div>
-        `;
+        modalBody.innerHTML = `
+
+      <!-- PROJECT CATEGORY -->
+
+      <div class="project-tag">
+        ${data.category}
+      </div>
+
+
+      <!-- PROJECT TITLE -->
+
+      <h2 style="
+        font-size: 1.8rem;
+        margin: 0.3rem 0 0.8rem 0;
+      ">
+        ${data.title}
+      </h2>
+
+
+      <!-- PROJECT DESCRIPTION -->
+
+      <p style="color: var(--text-muted);">
+        ${data.description}
+      </p>
+
+
+      <!-- CAROUSEL -->
+
+      <div class="carousel-container">
+
+        ${
+          currentProjectImages.length > 1
+            ? `
+              <button
+                class="carousel-btn prev"
+                onclick="prevSlide()"
+                aria-label="Previous image"
+              >
+                &lt;
+              </button>
+            `
+            : ""
+        }
+
+
+        <div
+          class="carousel-slide-wrapper"
+          id="slideWrapper"
+        >
+
+          <img
+            id="carouselImage"
+            src="${currentProjectImages[0]}"
+            alt="${data.title}"
+            class="carousel-img"
+            onerror="this.src='https://via.placeholder.com/800x450/16191e/10b981?text=Work+Sample+Image'"
+          />
+
+        </div>
+
+
+        ${
+          currentProjectImages.length > 1
+            ? `
+              <button
+                class="carousel-btn next"
+                onclick="nextSlide()"
+                aria-label="Next image"
+              >
+                &gt;
+              </button>
+            `
+            : ""
+        }
+
+      </div>
+
+
+      <!-- CAROUSEL DOTS -->
+
+      <div
+        class="carousel-dots"
+        id="carouselDots"
+      ></div>
+
+
+      <!-- FULL SAMPLE BUTTON -->
+
+      ${
+        data.driveLink
+          ? `
+            <div class="full-sample-container">
+
+              <a
+                href="${data.driveLink}"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="full-sample-btn"
+              >
+                View Full Sample
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+              </a>
+
+              <p class="full-sample-note">
+                Opens the complete sample in Google Drive
+              </p>
+
+            </div>
+          `
+          : ""
+      }
+
+    `;
 
         renderDots();
+
         initDragAndSwipe();
+
         document.getElementById("modalOverlay").classList.add("active");
       }
 
+      /* =========================================================
+     UPDATE CAROUSEL
+     ========================================================= */
+
       function updateCarousel() {
         const imgElement = document.getElementById("carouselImage");
+
         if (!imgElement) return;
 
         imgElement.style.transform = "translateX(0px)";
+
         imgElement.src = currentProjectImages[currentImageIndex];
 
         const dots = document.querySelectorAll(".dot");
-        dots.forEach((dot, idx) => {
-          dot.classList.toggle("active", idx === currentImageIndex);
+
+        dots.forEach((dot, index) => {
+          dot.classList.toggle("active", index === currentImageIndex);
         });
       }
 
+      /* =========================================================
+     PREVIOUS SLIDE
+     ========================================================= */
+
       function prevSlide() {
+        if (currentProjectImages.length <= 1) return;
+
         currentImageIndex =
           (currentImageIndex - 1 + currentProjectImages.length) %
           currentProjectImages.length;
+
         updateCarousel();
       }
 
+      /* =========================================================
+     NEXT SLIDE
+     ========================================================= */
+
       function nextSlide() {
+        if (currentProjectImages.length <= 1) return;
+
         currentImageIndex =
           (currentImageIndex + 1) % currentProjectImages.length;
+
         updateCarousel();
       }
+
+      /* =========================================================
+     CAROUSEL DOTS
+     ========================================================= */
 
       function renderDots() {
         const dotsContainer = document.getElementById("carouselDots");
+
+        if (!dotsContainer) return;
+
         if (currentProjectImages.length <= 1) {
           dotsContainer.innerHTML = "";
+
           return;
         }
 
         let dotsHTML = "";
-        currentProjectImages.forEach((_, idx) => {
-          dotsHTML += `<div class="dot ${idx === 0 ? "active" : ""}"></div>`;
+
+        currentProjectImages.forEach((_, index) => {
+          dotsHTML += `
+          <div
+            class="dot ${index === 0 ? "active" : ""}"
+            aria-label="View image ${index + 1}"
+          ></div>
+        `;
         });
+
         dotsContainer.innerHTML = dotsHTML;
       }
 
-      /* DRAG & TOUCH SWIPE LOGIC */
+      /* =========================================================
+     DRAG & TOUCH SWIPE
+     ========================================================= */
+
       function initDragAndSwipe() {
         const wrapper = document.getElementById("slideWrapper");
+
         const img = document.getElementById("carouselImage");
-        if (!wrapper || currentProjectImages.length <= 1) return;
 
-        // Touch events (Mobile)
-        wrapper.addEventListener("touchstart", touchStart);
-        wrapper.addEventListener("touchend", touchEnd);
-        wrapper.addEventListener("touchmove", touchMove);
+        if (!wrapper || currentProjectImages.length <= 1) {
+          return;
+        }
 
-        // Mouse events (Desktop Drag)
+        /* MOBILE TOUCH EVENTS */
+
+        wrapper.addEventListener("touchstart", touchStart, { passive: true });
+
+        wrapper.addEventListener("touchend", touchEnd, { passive: true });
+
+        wrapper.addEventListener("touchmove", touchMove, { passive: true });
+
+        /* DESKTOP MOUSE EVENTS */
+
         wrapper.addEventListener("mousedown", touchStart);
+
         wrapper.addEventListener("mouseup", touchEnd);
+
         wrapper.addEventListener("mouseleave", touchEnd);
+
         wrapper.addEventListener("mousemove", touchMove);
 
         function touchStart(event) {
           isDragging = true;
+
           startX = getPositionX(event);
         }
 
         function touchMove(event) {
           if (!isDragging) return;
+
           const currentPosition = getPositionX(event);
+
           currentTranslate = currentPosition - startX;
+
           img.style.transform = `translateX(${currentTranslate}px)`;
         }
 
         function touchEnd() {
           if (!isDragging) return;
+
           isDragging = false;
 
-          // Threshold for triggering slide change (50px swipe)
+          /* 50PX SWIPE THRESHOLD */
+
           if (currentTranslate < -50) {
             nextSlide();
           } else if (currentTranslate > 50) {
@@ -1267,25 +1546,46 @@
           } else {
             img.style.transform = "translateX(0px)";
           }
+
           currentTranslate = 0;
         }
 
         function getPositionX(event) {
-          return event.type.includes("mouse")
-            ? event.pageX
-            : event.touches[0].clientX;
+          if (event.type.includes("mouse")) {
+            return event.pageX;
+          }
+
+          return event.changedTouches[0].clientX;
         }
       }
+
+      /* =========================================================
+     CLOSE MODAL
+     ========================================================= */
 
       function closeModal() {
         document.getElementById("modalOverlay").classList.remove("active");
       }
+
+      /* =========================================================
+     CLOSE MODAL WHEN CLICKING OUTSIDE
+     ========================================================= */
 
       function closeModalOnOuterClick(event) {
         if (event.target.id === "modalOverlay") {
           closeModal();
         }
       }
+
+      /* =========================================================
+     ESC KEY TO CLOSE MODAL
+     ========================================================= */
+
+      document.addEventListener("keydown", (event) => {
+        if (event.key === "Escape") {
+          closeModal();
+        }
+      });
     </script>
   </body>
 </html>
