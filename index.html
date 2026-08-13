@@ -678,6 +678,20 @@
           display: block;
         }
 
+        .experience-card {
+          flex-direction: column;
+          padding: 1.5rem;
+        }
+
+        .experience-header {
+          flex-direction: column;
+          gap: 0.6rem;
+        }
+
+        .experience-type {
+          align-self: flex-start;
+        }
+
         .nav-links {
           display: none;
           position: absolute;
@@ -717,13 +731,124 @@
           grid-template-columns: 1fr;
         }
       }
+
+      /* --- WORK EXPERIENCE --- */
+
+      .experience-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+      }
+
+      .experience-card {
+        display: flex;
+        gap: 1.5rem;
+        background-color: var(--card-bg);
+        border: 1px solid var(--card-border);
+        padding: 2rem;
+        border-radius: 8px;
+        transition:
+          transform 0.3s ease,
+          border-color 0.3s ease;
+      }
+
+      .experience-card:hover {
+        transform: translateY(-4px);
+        border-color: var(--accent-green);
+      }
+
+      .experience-icon {
+        flex-shrink: 0;
+        width: 50px;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: var(--bg-dark);
+        border: 1px solid var(--card-border);
+        border-radius: 8px;
+        color: var(--accent-green);
+        font-size: 1.2rem;
+      }
+
+      .experience-content {
+        flex: 1;
+      }
+
+      .experience-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 1rem;
+        margin-bottom: 0.8rem;
+      }
+
+      .experience-header h3 {
+        font-size: 1.2rem;
+        margin-bottom: 0.2rem;
+      }
+
+      .experience-role {
+        display: block;
+        color: var(--accent-green);
+        font-size: 0.85rem;
+        font-weight: 600;
+      }
+
+      .experience-type {
+        color: var(--text-muted);
+        font-size: 0.75rem;
+        border: 1px solid var(--card-border);
+        padding: 0.3rem 0.7rem;
+        border-radius: 20px;
+        white-space: nowrap;
+      }
+
+      .experience-content p {
+        color: var(--text-muted);
+        font-size: 0.92rem;
+        line-height: 1.7;
+        margin-bottom: 1rem;
+      }
+
+      .experience-skills {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+      }
+
+      .experience-skills span {
+        background-color: var(--bg-dark);
+        border: 1px solid var(--card-border);
+        color: var(--text-main);
+        padding: 0.35rem 0.7rem;
+        border-radius: 14px;
+        font-size: 0.75rem;
+      }
+
+      .experience-note {
+        display: flex;
+        align-items: center;
+        gap: 0.6rem;
+        margin-top: 1.5rem;
+        padding: 0.9rem 1rem;
+        border-left: 2px solid var(--accent-green);
+        color: var(--text-muted);
+        font-size: 0.82rem;
+        font-style: italic;
+      }
+
+      .experience-note i {
+        color: var(--accent-green);
+        font-size: 0.8rem;
+      }
     </style>
   </head>
   <body>
     <!-- NAVIGATION -->
     <header>
       <nav>
-        <a href="#hero" class="logo">PORTFOLIO<span>.</span></a>
+        <a href="#hero" class="logo">ERNIE BALSOMO<span>.</span></a>
         <button
           class="hamburger-btn"
           id="hamburgerBtn"
@@ -732,13 +857,13 @@
           <i class="fa-solid fa-bars"></i>
         </button>
         <ul class="nav-links" id="navLinks">
-          <li><a href="#about" onclick="closeNav()">About</a></li>
           <li><a href="#services" onclick="closeNav()">Services</a></li>
           <li><a href="#skills" onclick="closeNav()">Skills</a></li>
-          <li><a href="#projects" onclick="closeNav()">Work</a></li>
-          <li>
-            <a href="#approach" onclick="closeNav()">My Approach</a>
-          </li>
+          <li><a href="#tools" onclick="closeNav()">Tools</a></li>
+          <li><a href="#projects" onclick="closeNav()">Portfolio</a></li>
+          <li><a href="#experience" onclick="closeNav()">Experience</a></li>
+          <li><a href="#approach" onclick="closeNav()">Approach</a></li>
+          <li><a href="#about" onclick="closeNav()">About</a></li>
           <li><a href="#contact" onclick="closeNav()">Contact</a></li>
         </ul>
       </nav>
@@ -762,44 +887,6 @@
         <div class="hero-btns">
           <a href="#contact" class="btn">Let's Work Together</a>
           <a href="#projects" class="btn btn-outline">View Portfolio Samples</a>
-        </div>
-      </div>
-    </section>
-
-    <!-- 2. ABOUT SECTION -->
-    <section id="about">
-      <h2 class="section-title">About Me</h2>
-
-      <div class="about-grid">
-        <div class="profile-container">
-          <img src="Ernie.png" alt="Profile Picture" class="profile-img" />
-        </div>
-
-        <div class="about-text">
-          <p>
-            Hi, I'm Ernie Balsomo, an aspiring E-commerce Virtual Assistant
-            focused on product research, SEO product listings, and organized
-            catalog management. I specialize in turning limited product
-            information into complete, accurate, and marketplace-ready listings
-            through research, structured data, and optimized content.
-          </p>
-
-          <p>
-            My workflow starts with researching product specifications,
-            identifying key features, verifying information, analyzing
-            competitor listings, and finding relevant keywords. I then use these
-            findings to create SEO-focused product titles, clear descriptions,
-            and organized listing content suitable for different e-commerce
-            platforms.
-          </p>
-
-          <p>
-            This portfolio features self-initiated projects that demonstrate my
-            approach, attention to detail, and commitment to producing accurate
-            and well-organized work. I'm continuously developing my e-commerce
-            skills through structured training, hands-on practice, and portfolio
-            projects.
-          </p>
         </div>
       </div>
     </section>
@@ -936,6 +1023,91 @@
       </div>
     </section>
 
+    <!-- TOOLS & PLATFORMS SECTION -->
+    <section id="tools">
+      <h2 class="section-title">Tools & Platforms</h2>
+
+      <p class="section-note">
+        Tools and platforms I use to support product research, data
+        organization, content creation, listing preparation, and digital
+        workflow management.
+      </p>
+
+      <div class="skills-grid">
+        <!-- E-commerce & Research -->
+        <div class="skill-category">
+          <h3>Research & E-commerce</h3>
+
+          <div class="skill-list">
+            <span class="skill-badge">Google Search</span>
+            <span class="skill-badge">Google Sheets</span>
+            <span class="skill-badge">Microsoft Excel</span>
+            <span class="skill-badge">E-commerce Platforms</span>
+          </div>
+        </div>
+
+        <!-- Productivity -->
+        <div class="skill-category">
+          <h3>Productivity & Office</h3>
+
+          <div class="skill-list">
+            <span class="skill-badge">Google Workspace</span>
+            <span class="skill-badge">Microsoft Word</span>
+            <span class="skill-badge">Microsoft Excel</span>
+            <span class="skill-badge">Microsoft PowerPoint</span>
+          </div>
+        </div>
+
+        <!-- Content & Design -->
+        <div class="skill-category">
+          <h3>Content & Design</h3>
+
+          <div class="skill-list">
+            <span class="skill-badge">Canva</span>
+            <span class="skill-badge">VSDC Video Editor</span>
+            <span class="skill-badge">Graphic Design</span>
+            <span class="skill-badge">Video Editing</span>
+          </div>
+        </div>
+
+        <!-- Social Media -->
+        <div class="skill-category">
+          <h3>Social Media & Marketing</h3>
+
+          <div class="skill-list">
+            <span class="skill-badge">Meta Business Suite</span>
+            <span class="skill-badge">Facebook</span>
+            <span class="skill-badge">Content Scheduling</span>
+            <span class="skill-badge">Content Calendar</span>
+          </div>
+        </div>
+
+        <!-- AI & Digital Tools -->
+        <div class="skill-category">
+          <h3>AI & Digital Tools</h3>
+
+          <div class="skill-list">
+            <span class="skill-badge">AI Tools</span>
+            <span class="skill-badge">Online Research Tools</span>
+            <span class="skill-badge">Digital Collaboration Tools</span>
+            <span class="skill-badge">Cloud-Based Tools</span>
+          </div>
+        </div>
+
+        <!-- Broadcast -->
+        <div class="skill-category">
+          <h3>Broadcast & Livestream</h3>
+
+          <div class="skill-list">
+            <span class="skill-badge">vMix</span>
+            <span class="skill-badge">OTS</span>
+            <span class="skill-badge">Livestream Software</span>
+            <span class="skill-badge">Broadcast Tools</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- 5. FEATURED WORK SECTION -->
     <section id="projects">
       <h2 class="section-title">Portfolio Samples</h2>
@@ -1037,28 +1209,95 @@
       </div>
     </section>
 
-    <!-- 6. CERTIFICATIONS SECTION
-    <section id="certifications">
-      <h2 class="section-title">Certifications</h2>
-      <div class="cert-grid">
-        <div class="cert-card">
-          <div class="cert-icon">📜</div>
-          <div class="cert-info">
-            <h3>HubSpot CRM Certification</h3>
-            <div class="cert-issuer">HubSpot Academy</div>
-            <div class="cert-date">Completed 2026</div>
+    <!-- 6. WORK EXPERIENCE SECTION -->
+    <section id="experience">
+      <h2 class="section-title">Work Experience</h2>
+
+      <p class="section-note">
+        My previous professional experience has helped me develop practical
+        skills in sales, customer support, content management, social media
+        operations, and day-to-day business support.
+      </p>
+
+      <div class="experience-grid">
+        <!-- SALES EXPERIENCE -->
+        <div class="experience-card">
+          <div class="experience-icon">
+            <i class="fa-solid fa-store"></i>
+          </div>
+
+          <div class="experience-content">
+            <div class="experience-header">
+              <div>
+                <h3>Sales & Retail Support</h3>
+                <span class="experience-role">Selling Assistant</span>
+              </div>
+
+              <span class="experience-type">Professional Experience</span>
+            </div>
+
+            <p>
+              Supported customers with product selection, answered
+              product-related questions, assisted with sales activities, and
+              maintained organized product presentation in a fast-paced retail
+              environment.
+            </p>
+
+            <div class="experience-skills">
+              <span>Customer Support</span>
+              <span>Product Knowledge</span>
+              <span>Sales Support</span>
+              <span>Product Presentation</span>
+              <span>Communication</span>
+            </div>
           </div>
         </div>
-        <div class="cert-card">
-          <div class="cert-icon">📜</div>
-          <div class="cert-info">
-            <h3>Virtual Assistant Training Program</h3>
-            <div class="cert-issuer">Professional Training Program</div>
-            <div class="cert-date">Completed 2025</div>
+
+        <!-- SOCIAL MEDIA / BROADCASTING EXPERIENCE -->
+        <div class="experience-card">
+          <div class="experience-icon">
+            <i class="fa-solid fa-bullhorn"></i>
+          </div>
+
+          <div class="experience-content">
+            <div class="experience-header">
+              <div>
+                <h3>Social Media & Broadcasting Support</h3>
+                <span class="experience-role"
+                  >Previous Professional Experience</span
+                >
+              </div>
+
+              <span class="experience-type">Media Operations</span>
+            </div>
+
+            <p>
+              Scheduled and published promotional content using Meta Business
+              Suite, helped organize content calendars for automated posting,
+              created promotional graphics and videos, and supported live
+              broadcasting operations.
+            </p>
+
+            <div class="experience-skills">
+              <span>Meta Business Suite</span>
+              <span>Content Scheduling</span>
+              <span>Content Calendar</span>
+              <span>Canva</span>
+              <span>Video Editing</span>
+              <span>Live Broadcasting</span>
+            </div>
           </div>
         </div>
       </div>
-    </section> -->
+
+      <div class="experience-note">
+        <i class="fa-solid fa-circle-info"></i>
+        <span>
+          My current portfolio focuses specifically on e-commerce product
+          research, listing optimization, and catalog support.
+        </span>
+      </div>
+    </section>
 
     <section id="approach">
       <h2 class="section-title">My Approach</h2>
@@ -1126,6 +1365,67 @@
         </div>
       </div>
     </section>
+
+    <!-- 2. ABOUT SECTION -->
+    <section id="about">
+      <h2 class="section-title">About Me</h2>
+
+      <div class="about-grid">
+        <div class="profile-container">
+          <img src="Ernie.png" alt="Profile Picture" class="profile-img" />
+        </div>
+
+        <div class="about-text">
+          <p>
+            Hi, I'm Ernie Balsomo, an aspiring E-commerce Virtual Assistant
+            focused on product research, SEO product listings, and organized
+            catalog management. I specialize in turning limited product
+            information into complete, accurate, and marketplace-ready listings
+            through research, structured data, and optimized content.
+          </p>
+
+          <p>
+            My workflow starts with researching product specifications,
+            identifying key features, verifying information, analyzing
+            competitor listings, and finding relevant keywords. I then use these
+            findings to create SEO-focused product titles, clear descriptions,
+            and organized listing content suitable for different e-commerce
+            platforms.
+          </p>
+
+          <p>
+            This portfolio features self-initiated projects that demonstrate my
+            approach, attention to detail, and commitment to producing accurate
+            and well-organized work. I'm continuously developing my e-commerce
+            skills through structured training, hands-on practice, and portfolio
+            projects.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. CERTIFICATIONS SECTION
+    <section id="certifications">
+      <h2 class="section-title">Certifications</h2>
+      <div class="cert-grid">
+        <div class="cert-card">
+          <div class="cert-icon">📜</div>
+          <div class="cert-info">
+            <h3>HubSpot CRM Certification</h3>
+            <div class="cert-issuer">HubSpot Academy</div>
+            <div class="cert-date">Completed 2026</div>
+          </div>
+        </div>
+        <div class="cert-card">
+          <div class="cert-icon">📜</div>
+          <div class="cert-info">
+            <h3>Virtual Assistant Training Program</h3>
+            <div class="cert-issuer">Professional Training Program</div>
+            <div class="cert-date">Completed 2025</div>
+          </div>
+        </div>
+      </div>
+    </section> -->
 
     <!-- 7. CONTACT SECTION -->
     <section id="contact">
