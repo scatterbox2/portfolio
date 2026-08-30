@@ -561,6 +561,25 @@
         font-size: 0.8rem;
       }
 
+      .cert-card {
+        background-color: var(--card-bg);
+        border: 1px solid var(--card-border);
+        padding: 1.5rem;
+        border-radius: 8px;
+        display: flex;
+        align-items: flex-start;
+        gap: 1.2rem;
+        cursor: pointer;
+        transition:
+          transform 0.3s ease,
+          border-color 0.3s ease;
+      }
+
+      .cert-card:hover {
+        transform: translateY(-4px);
+        border-color: var(--accent-green);
+      }
+
       /* --- FULL SAMPLE BUTTON --- */
       .full-sample-container {
         text-align: center;
@@ -863,7 +882,9 @@
           <li><a href="#projects" onclick="closeNav()">Portfolio</a></li>
           <li><a href="#experience" onclick="closeNav()">Experience</a></li>
           <li><a href="#approach" onclick="closeNav()">Approach</a></li>
-          <li><a href="#certifications" onclick="closeNav()">Certifications</a></li>
+          <li>
+            <a href="#certifications" onclick="closeNav()">Certifications</a>
+          </li>
           <li><a href="#about" onclick="closeNav()">About</a></li>
           <li><a href="#contact" onclick="closeNav()">Contact</a></li>
         </ul>
@@ -1371,12 +1392,14 @@
     <section id="certifications">
       <h2 class="section-title">Certifications</h2>
       <div class="cert-grid">
-        <div class="cert-card">
+        <div class="cert-card" onclick="openModal('cert1')">
           <div class="cert-icon">📜</div>
           <div class="cert-info">
             <h3>E-commerce Specialist Courses</h3>
             <div class="cert-issuer">Va4ecomcourse</div>
             <div class="cert-date">Completed 2026</div>
+            <span class="view-work-link" style="margin-top: 0.5rem"
+              >View certificate →</span>
           </div>
         </div>
       </div>
@@ -1419,8 +1442,6 @@
         </div>
       </div>
     </section>
-
-    
 
     <!-- 7. CONTACT SECTION -->
     <section id="contact">
@@ -1576,7 +1597,8 @@
 
           images: ["Product Research.png"],
 
-          driveLink: "https://docs.google.com/spreadsheets/d/1ElUadRAlN7NpM6cLRmCmr80RA4H5NaRg/edit?gid=114763611#gid=114763611",
+          driveLink:
+            "https://docs.google.com/spreadsheets/d/1ElUadRAlN7NpM6cLRmCmr80RA4H5NaRg/edit?gid=114763611#gid=114763611",
         },
 
         /* PROJECT 2 */
@@ -1620,6 +1642,16 @@
           images: ["listing-sample-1.jpg", "listing-sample-2.jpg"],
 
           driveLink: "https://drive.google.com/YOUR-PROJECT-4-LINK",
+        },
+        
+        /* CERTIFICATION 1 */
+        cert1: {
+          title: "E-commerce Specialist Courses",
+          category: "Certification",
+          description:
+            "Completed comprehensive training in CRM workflow optimization, client contact management, and pipeline tracking through HubSpot Academy.",
+          images: ["Va4ecom Cert.png"], // Replace with your image file name
+          driveLink: "https://drive.google.com/YOUR-HUBSPOT-CERT-LINK",
         },
       };
 
