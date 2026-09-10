@@ -30,16 +30,79 @@
       rel="stylesheet"
     />
     <style>
-      /* --- CSS VARIABLES & RESET --- */
+      /* --- UPDATED THEME SCHEME & GLASS LOOK --- */
       :root {
-        --bg-dark: #0d0f12;
-        --card-bg: #16191e;
-        --card-border: #23272f;
-        --text-main: #f3f4f6;
-        --text-muted: #9ca3af;
-        --accent-green: #10b981;
-        --accent-green-hover: #059669;
-        --accent-glow: rgba(16, 185, 129, 0.15);
+        --bg-dark: #0a0d10;
+        --card-bg: rgba(22, 27, 34, 0.65); /* Translucent background */
+        --card-border: rgba(
+          255,
+          255,
+          255,
+          0.08
+        ); /* Subtle frosted glass border */
+        --text-main: #ffffff;
+        --text-muted: #8b949e;
+        --accent-green: #00e699; /* Vibrant neon emerald green */
+        --accent-green-hover: #00b377;
+        --accent-glow: rgba(0, 230, 153, 0.2);
+      }
+
+      /* Ambient background radial glow */
+      body {
+        background-color: var(--bg-dark);
+        background-image:
+          radial-gradient(
+            circle at 80% 20%,
+            rgba(0, 230, 153, 0.06) 0%,
+            transparent 40%
+          ),
+          radial-gradient(
+            circle at 20% 80%,
+            rgba(0, 230, 153, 0.04) 0%,
+            transparent 40%
+          );
+        background-attachment: fixed;
+      }
+
+      /* Header Glassmorphism */
+      header {
+        background-color: rgba(10, 13, 16, 0.75) !important;
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
+        border-bottom: 1px solid var(--card-border);
+      }
+
+      /* Glass effect for all Cards and Containers */
+      .card,
+      .skill-category,
+      .project-card,
+      .cert-card,
+      .experience-card,
+      .contact-container {
+        background: var(--card-bg) !important;
+        backdrop-filter: blur(12px) saturate(160%);
+        -webkit-backdrop-filter: blur(12px) saturate(160%);
+        border: 1px solid var(--card-border) !important;
+        border-radius: 12px !important;
+        box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+      }
+
+      /* Subtle glow effect on card hovers */
+      .card:hover,
+      .project-card:hover,
+      .cert-card:hover,
+      .experience-card:hover {
+        border-color: rgba(0, 230, 153, 0.4) !important;
+        box-shadow: 0 10px 30px -10px var(--accent-glow);
+      }
+
+      /* Pill / Badge frosted look */
+      .skill-badge,
+      .experience-skills span {
+        background-color: rgba(255, 255, 255, 0.03) !important;
+        border: 1px solid rgba(255, 255, 255, 0.1) !important;
+        color: #d0d7de !important;
+        border-radius: 6px !important;
       }
 
       * {
